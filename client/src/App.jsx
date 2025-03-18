@@ -11,7 +11,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(`http://localhost:5001/?name=${name}`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/?name=${name}`);
       const data = await response.text();
       setMessage(data);
     } catch (error) {
